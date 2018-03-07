@@ -10,17 +10,17 @@ namespace :source do
     old_version = XdanDatetimepickerRails::VERSION
     new_version = ENV["version"] || "master"
     puts "Downloading jquery.datetimepicker.js..."
-    download "https://raw.github.com/xdan/datetimepicker/#{new_version}/jquery.datetimepicker.js", "app/assets/javascripts/jquery.xdan.datetimepicker.js"
+    download "https://raw.github.com/HuBandiT/datetimepicker/#{new_version}/jquery.datetimepicker.js", "app/assets/javascripts/jquery.xdan.datetimepicker.js"
     puts "Downloading jquery.datetimepicker.full.js..."
-    download "https://raw.github.com/xdan/datetimepicker/#{new_version}/build/jquery.datetimepicker.full.js", "app/assets/javascripts/jquery.xdan.datetimepicker.full.js"
+    download "https://raw.github.com/HuBandiT/datetimepicker/#{new_version}/build/jquery.datetimepicker.full.js", "app/assets/javascripts/jquery.xdan.datetimepicker.full.js"
 
     puts "Downloading jquery.datetimepicker.css..."
-    download "https://raw.github.com/xdan/datetimepicker/#{new_version}/jquery.datetimepicker.css", "app/assets/stylesheets/jquery.xdan.datetimepicker.css"
+    download "https://raw.github.com/HuBandiT/datetimepicker/#{new_version}/jquery.datetimepicker.css", "app/assets/stylesheets/jquery.xdan.datetimepicker.css"
 
     update_version from: old_version, to: new_version
 
     system "git add app/assets/ lib/xdan-datetimepicker-rails/version.rb"
-    system "git commit -m 'Update source to version #{new_version}\n\n[Diff from #{old_version} to #{new_version}](https://www.github.com/xdan/datetimepicker/compare/#{old_version}...#{new_version})'"
+    system "git commit -m 'Update source to version #{new_version}\n\n[Diff from #{old_version} to #{new_version}](https://www.github.com/HuBandiT/datetimepicker/compare/#{old_version}...#{new_version})'"
     system "git tag #{new_version}"
   end
 end
